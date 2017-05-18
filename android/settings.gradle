@@ -1,0 +1,3 @@
+rootProject.name = 'ZenApp'
+
+include ':app'
