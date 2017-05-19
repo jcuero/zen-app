@@ -4,16 +4,7 @@
 
 import {isFunction} from '../utils/utils';
 
-export const getAsText = (api, dispatch, requestCallback, receiveCallback, receiveErrorCallback) => {
-    return get(api, 'text', dispatch, requestCallback, receiveCallback, receiveErrorCallback);
-};
-
-export const getAsJson = (api, dispatch, requestCallback, receiveCallback, receiveErrorCallback) => {
-    return get(api, 'json', dispatch, requestCallback, receiveCallback, receiveErrorCallback);
-};
-
 const get = (api, typeResponse, dispatch, requestCallback, receiveCallback, receiveErrorCallback) => {
-
     if (isFunction(requestCallback)) {
         dispatch(requestCallback());
     }
@@ -38,4 +29,12 @@ const get = (api, typeResponse, dispatch, requestCallback, receiveCallback, rece
                 dispatch(receiveErrorCallback(error));
             }
         })
+};
+
+export const getAsText = (api, dispatch, requestCallback, receiveCallback, receiveErrorCallback) => {
+    return get(api, 'text', dispatch, requestCallback, receiveCallback, receiveErrorCallback);
+};
+
+export const getAsJson = (api, dispatch, requestCallback, receiveCallback, receiveErrorCallback) => {
+    return get(api, 'json', dispatch, requestCallback, receiveCallback, receiveErrorCallback);
 };

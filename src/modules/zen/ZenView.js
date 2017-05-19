@@ -14,12 +14,6 @@ class ZenView extends Component {
         fetchZen: PropTypes.func.isRequired
     };
 
-    componentDidMount() {
-    };
-
-    componentWillReceiveProps(nextProps) {
-    };
-
     loadData() {
         this.props.fetchZen(this.props.dispatch);
     };

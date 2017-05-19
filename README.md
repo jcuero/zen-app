@@ -8,6 +8,7 @@ Material de estudio para la capacitación en Premize S.A.S
     * Redux
     * Fetch API
     * Comandos personalizados con NPM
+    * Pruebas unitarias con Jest
 
 # Instalación y configuración
 

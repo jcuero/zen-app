@@ -13,11 +13,10 @@ import {
 import {fetchZen as fetchZenService} from '../../services/ZenService';
 
 
-const TAG = "ZenState > ";
-
 const initialState = {
     zen: null,
-    fetching: false
+    fetching: false,
+    error: null
 };
 
 export function fetchZen(dispatch) {
@@ -27,11 +26,11 @@ export function fetchZen(dispatch) {
 export default function ZenStateReducer(state = initialState, action = {}) {
     switch (action.type) {
         case REQUEST_ZEN:
-            return {...state, fetching: true, zen: null};
+            return {...state, fetching: true, zen: null, error: null};
         case RECEIVE_ZEN:
-            return {...state, fetching: false, zen: action.payload.data};
+            return {...state, fetching: false, error: null, zen: action.payload.data};
         case RECEIVE_ZEN_ERROR:
-            return {...state, fetching: false, zen: null};
+            return {...state, fetching: false, zen: null, error: action.payload.error};
         default:
             return state;
     }

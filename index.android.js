@@ -25,7 +25,6 @@ export default class ZenApp extends Component {
                 <Provider store={store}>
                     <ZenViewContainer/>
                 </Provider>
-
             </View>
         );
     }
